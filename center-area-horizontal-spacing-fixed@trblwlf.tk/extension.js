@@ -159,12 +159,12 @@ function removeStyles() {
     }
 }
 
-function init(extensionMeta) {
+function init() {
     Convenience.initTranslations();
-    settings = Convenience.getSettings();
 }
 
-function enable() {
+function enable(extensionMeta) {
+    settings = Convenience.getSettings();
     applyStyles();
     /* whenever the settings get changed, re-layout everything. */
     hpaddingChangedID = settings.connect('changed::hpadding', function () {
